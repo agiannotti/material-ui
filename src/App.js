@@ -10,6 +10,11 @@ import '@fontsource/roboto';
 
 import Typography from '@material-ui/core/Typography';
 
+import Container from '@material-ui/core/Container';
+
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
 import {
   makeStyles,
   ThemeProvider,
@@ -72,51 +77,66 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className='App'>
-        <header className='App-header'>
-          <Typography variant='h2' component='div'>
-            Welcome to MUI
-          </Typography>
-        </header>
-        <header className='App-header'>
-          <Typography variant='subtitle1' component='div'>
-            Typographic!
-          </Typography>
-        </header>
+      <Container maxWidth='sm'>
+        <div className='App'>
+          <header className='App-header'>
+            <Typography variant='h2' component='div'>
+              Welcome to MUI
+            </Typography>
+          </header>
+          <header className='App-header'>
+            <Typography variant='subtitle1' component='div'>
+              Typographic!
+            </Typography>
+          </header>
 
-        <ButtonStyled />
-        <TextField
-          variant='filled'
-          type='email'
-          placeholder='meow@nyan.com'
-          label='email'
-        />
-        <TextField variant='outlined' type='time' label='TIME' />
-        <TextField variant='outlined' color='secondary' type='date' />
+          <ButtonStyled />
 
-        <CheckboxExample />
-        <CheckboxExample />
-        <CheckboxExample />
-        <CheckboxExample />
-        <ButtonGroup variant='contained' color='primary'>
-          <br />
-          <Button
-            startIcon={<SaveIcon />}
-            style={{ fontSize: 24 }}
-            onClick={() => alert('Saved')}
-          >
-            Save Button
-          </Button>
-          <Button
-            endIcon={<DeleteIcon />}
-            style={{ fontSize: 24 }}
-            onClick={() => alert('Deleted')}
-            color='secondary'
-          >
-            Discard Button
-          </Button>
-        </ButtonGroup>
-      </div>
+          <Grid container spacing={4} justify='center'>
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height: 75, width: '100%' }} />
+            </Grid>
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height: 75, width: '100%' }} />
+            </Grid>
+            <Grid item xs={3} sm={6} lg={12}>
+              <Paper style={{ height: 75, width: '100%' }} />
+            </Grid>
+          </Grid>
+
+          {/* <TextField
+            variant='filled'
+            type='email'
+            placeholder='meow@nyan.com'
+            label='email'
+          />
+          <TextField variant='outlined' type='time' label='TIME' />
+          <TextField variant='outlined' color='secondary' type='date' /> */}
+
+          <CheckboxExample />
+          <CheckboxExample />
+          <CheckboxExample />
+          <CheckboxExample />
+          <ButtonGroup variant='contained' color='primary'>
+            <br />
+            <Button
+              startIcon={<SaveIcon />}
+              style={{ fontSize: 24 }}
+              onClick={() => alert('Saved')}
+            >
+              Save Button
+            </Button>
+            <Button
+              endIcon={<DeleteIcon />}
+              style={{ fontSize: 24 }}
+              onClick={() => alert('Deleted')}
+              color='secondary'
+            >
+              Discard Button
+            </Button>
+          </ButtonGroup>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
