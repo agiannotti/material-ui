@@ -15,6 +15,11 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/icons/Menu';
+
 import {
   makeStyles,
   ThemeProvider,
@@ -23,6 +28,7 @@ import {
 
 import './App.css';
 import { grey, purple } from '@material-ui/core/colors';
+import { Icon } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -80,6 +86,15 @@ function App() {
       <Container maxWidth='sm'>
         <div className='App'>
           <header className='App-header'>
+            <AppBar color='secondary'>
+              <Toolbar>
+                <IconButton>
+                  <Menu />
+                  <Typography variant='h6'></Typography>
+                  <Button>Login</Button>
+                </IconButton>
+              </Toolbar>
+            </AppBar>
             <Typography variant='h2' component='div'>
               Welcome to MUI
             </Typography>
@@ -104,14 +119,14 @@ function App() {
             </Grid>
           </Grid>
 
-          {/* <TextField
+          <TextField
             variant='filled'
             type='email'
             placeholder='meow@nyan.com'
             label='email'
           />
           <TextField variant='outlined' type='time' label='TIME' />
-          <TextField variant='outlined' color='secondary' type='date' /> */}
+          <TextField variant='outlined' color='secondary' type='date' />
 
           <CheckboxExample />
           <CheckboxExample />
