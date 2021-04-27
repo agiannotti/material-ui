@@ -28,14 +28,13 @@ import {
 
 import './App.css';
 import { grey, purple } from '@material-ui/core/colors';
-import { Icon } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FE6b8b, #FF8E53)',
     border: 0,
     borderRadius: 15,
-    marginBottom: 14,
+    marginBottom: 16,
     color: 'white',
     padding: '15px 30px',
   },
